@@ -2,6 +2,7 @@ package com.academy.apifiltersjpa.controller;
 
 import com.academy.apifiltersjpa.entity.ActiveDisableEnum;
 import com.academy.apifiltersjpa.entity.User;
+import com.academy.apifiltersjpa.entity.User_;
 import jakarta.persistence.criteria.Predicate;
 import org.springframework.data.jpa.domain.Specification;
 
@@ -27,22 +28,22 @@ public record UserCriteriaNotClassSpecification(
 			List<Predicate> predicates = new ArrayList<>();
 			// Adicione as condições desejadas de acordo com os campos preenchidos no userCriteria
 			if (name != null && !name.isEmpty()) {
-				predicates.add(criteriaBuilder.like(root.get("name"), "%" + name + "%"));
+				predicates.add(criteriaBuilder.like(root.get( User_.name), "%" + name + "%"));
 			}
 			if (dateBirthday != null) {
-				predicates.add(criteriaBuilder.equal(root.get("dateBirthday"), dateBirthday));
+				predicates.add(criteriaBuilder.equal(root.get(User_.dateBirthday), dateBirthday));
 			}
 			if (ageInitial != null && ageEnd != null) {
-				predicates.add(criteriaBuilder.between(root.get("age"), ageInitial, ageEnd));
+				predicates.add(criteriaBuilder.between(root.get(User_.age), ageInitial, ageEnd));
 			}
 			if (city != null && !city.isEmpty()) {
-				predicates.add(criteriaBuilder.like(root.get("city"), "%" + city + "%"));
+				predicates.add(criteriaBuilder.like(root.get(User_.city), "%" + city + "%"));
 			}
 			if (state != null && !state().isEmpty()) {
-				predicates.add(criteriaBuilder.like(root.get("state"), "%" + state + "%"));
+				predicates.add(criteriaBuilder.like(root.get(User_.state), "%" + state + "%"));
 			}
 			if (active != null) {
-				predicates.add(criteriaBuilder.equal(root.get("active"), active));
+				predicates.add(criteriaBuilder.equal(root.get(User_.active), active));
 			}
 
 			return criteriaBuilder.and(predicates.toArray(new Predicate[0]));

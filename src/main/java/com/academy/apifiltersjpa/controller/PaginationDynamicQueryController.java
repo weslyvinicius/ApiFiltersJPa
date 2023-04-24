@@ -2,6 +2,7 @@ package com.academy.apifiltersjpa.controller;
 
 import com.academy.apifiltersjpa.entity.User;
 import com.academy.apifiltersjpa.repository.UserRepository;
+import com.academy.apifiltersjpa.repository.UserRepositoryOther;
 import com.academy.apifiltersjpa.repository.UserSpecification;
 import lombok.AllArgsConstructor;
 import org.springframework.data.domain.Page;
@@ -19,6 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class PaginationDynamicQueryController {
 
 	private final UserRepository userRepository;
+	private final UserRepositoryOther userRepositoryOther;
 
 	@GetMapping("/paginacao-simples")
 	public Page<User> paginacaoSimples(){
@@ -44,6 +46,13 @@ public class PaginationDynamicQueryController {
 	@GetMapping("/query-dinamica2")
 	public Page<User> paginacaoComParametosEOrdenacao( UserCriteriaNotClassSpecification userCriteria, Pageable pageable){
 		return userRepository.findAll( userCriteria.toSpec() , pageable);
+	}
+
+	@GetMapping("/query-dinamica3")
+	public Page<User> paginacaoComParametosEOrdenacaoOther( UserCriteriaNotClassSpecification userCriteria, Pageable pageable){
+		return userRepositoryOther.findAll( UserRepositoryOther.Specs.createdOn(
+				UserRepositoryOther.Specs.likeName( userCriteria.name() )
+		) , pageable);
 	}
 
 }
