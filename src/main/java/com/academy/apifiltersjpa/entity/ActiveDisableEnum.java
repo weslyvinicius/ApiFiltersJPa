@@ -1,14 +1,20 @@
 package com.academy.apifiltersjpa.entity;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import lombok.Getter;
 
 import java.util.stream.Stream;
 
+@JsonFormat(shape = JsonFormat.Shape.OBJECT)
 public enum ActiveDisableEnum {
 	ACTIVE("A", "Active"),
 	DISABLE("D", "Disable");
 
 	@Getter
+	@JsonValue
 	private String type;
 
 	@Getter
@@ -21,7 +27,7 @@ public enum ActiveDisableEnum {
 
 	public static ActiveDisableEnum of(String type) {
 		return Stream.of(ActiveDisableEnum.values())
-				.filter(p -> p.getType().equals(type))
+				.filter(p -> p.getType().toLowerCase().equals(type.toLowerCase()))
 				.findFirst()
 				.orElseThrow(IllegalArgumentException::new);
 	}
