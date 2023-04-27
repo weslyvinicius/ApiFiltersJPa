@@ -9,11 +9,12 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-
+import java.time.LocalDate;
 
 @AllArgsConstructor
 @RestController
@@ -49,10 +50,18 @@ public class PaginationDynamicQueryController {
 	}
 
 	@GetMapping("/query-dinamica3")
-	public Page<User> paginacaoComParametosEOrdenacaoOther( UserCriteriaNotClassSpecification userCriteria, Pageable pageable){
-		return userRepositoryOther.findAll( UserRepositoryOther.Specs.createdOn(
-				UserRepositoryOther.Specs.likeName( userCriteria.name() )
-		) , pageable);
+	public Page<User> paginacaoComParametosEOrdenacaoOther( String name, String city, Pageable pageable){
+		return userRepositoryOther.findAll(
+				Specification.where( UserRepositoryOther.Specs.likeName(name) )
+						       .and( UserRepositoryOther.Specs.likeCity( city ) )
+		    , pageable);
+	}
+
+	@GetMapping("/query-dinamica4")
+	public Page<User> paginacaoComParametosEOrdenacaoOther( UserCriteria userCriteria, Pageable pageable){
+		return userRepositoryOther.findAll(
+				UserRepositoryOther.Specs.dynamicQuery(userCriteria)
+				, pageable);
 	}
 
 }
