@@ -1,6 +1,6 @@
-package com.academy.apifiltersjpa.repository;
+package com.academy.apifiltersjpa.user_exemple.repository;
 
-import com.academy.apifiltersjpa.entity.User;
+import com.academy.apifiltersjpa.user_exemple.entity.User;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.stereotype.Repository;

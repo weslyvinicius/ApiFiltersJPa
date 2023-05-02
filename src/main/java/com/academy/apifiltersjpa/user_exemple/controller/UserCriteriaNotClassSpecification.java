@@ -1,8 +1,8 @@
-package com.academy.apifiltersjpa.controller;
+package com.academy.apifiltersjpa.user_exemple.controller;
 
-import com.academy.apifiltersjpa.entity.ActiveDisableEnum;
-import com.academy.apifiltersjpa.entity.User;
-import com.academy.apifiltersjpa.entity.User_;
+import com.academy.apifiltersjpa.user_exemple.entity.ActiveDisableEnum;
+import com.academy.apifiltersjpa.user_exemple.entity.User;
+import com.academy.apifiltersjpa.user_exemple.entity.User_;
 import jakarta.persistence.criteria.Predicate;
 import org.springframework.data.jpa.domain.Specification;
 

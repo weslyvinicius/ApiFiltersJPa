@@ -1,8 +1,9 @@
-package com.academy.apifiltersjpa.repository;
+package com.academy.apifiltersjpa.user_exemple.repository;
 
-import com.academy.apifiltersjpa.controller.UserCriteria;
-import com.academy.apifiltersjpa.entity.User;
-import com.academy.apifiltersjpa.entity.User_;
+import com.academy.apifiltersjpa.user_exemple.controller.UserCriteria;
+import com.academy.apifiltersjpa.user_exemple.entity.User;
+
+import com.academy.apifiltersjpa.user_exemple.entity.User_;
 import jakarta.persistence.criteria.CriteriaBuilder;
 import jakarta.persistence.criteria.CriteriaQuery;
 import jakarta.persistence.criteria.Predicate;
@@ -26,7 +27,7 @@ public class UserSpecification implements Specification<User> {
 
 		// Adicione as condições desejadas de acordo com os campos preenchidos no userCriteria
 		if (userCriteria.name() != null && !userCriteria.name().isEmpty()) {
-			predicates.add(criteriaBuilder.like(root.get(User_.name), "%" + userCriteria.name() + "%"));
+			predicates.add(criteriaBuilder.like(root.get( User_.name), "%" + userCriteria.name() + "%"));
 		}
 		if (userCriteria.dateBirthday() != null) {
 			predicates.add(criteriaBuilder.equal(root.get(User_.dateBirthday), userCriteria.dateBirthday()));

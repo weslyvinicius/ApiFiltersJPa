@@ -1,6 +1,6 @@
-package com.academy.apifiltersjpa.configs;
+package com.academy.apifiltersjpa.user_exemple.configs;
 
-import com.academy.apifiltersjpa.entity.ActiveDisableEnum;
+import com.academy.apifiltersjpa.user_exemple.entity.ActiveDisableEnum;
 
 import org.springframework.core.convert.converter.Converter;
 

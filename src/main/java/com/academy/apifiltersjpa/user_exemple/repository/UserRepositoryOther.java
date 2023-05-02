@@ -1,19 +1,14 @@
-package com.academy.apifiltersjpa.repository;
+package com.academy.apifiltersjpa.user_exemple.repository;
 
-import com.academy.apifiltersjpa.controller.UserCriteria;
-import com.academy.apifiltersjpa.controller.UserCriteriaNotClassSpecification;
-import com.academy.apifiltersjpa.entity.ActiveDisableEnum;
-import com.academy.apifiltersjpa.entity.User;
-import com.academy.apifiltersjpa.entity.User_;
-import jakarta.persistence.criteria.Predicate;
+import com.academy.apifiltersjpa.user_exemple.controller.UserCriteria;
+import com.academy.apifiltersjpa.user_exemple.entity.ActiveDisableEnum;
+import com.academy.apifiltersjpa.user_exemple.entity.User;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.stereotype.Repository;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
 
 @Repository
 public interface UserRepositoryOther extends PagingAndSortingRepository<User, Long>, JpaSpecificationExecutor<User> {

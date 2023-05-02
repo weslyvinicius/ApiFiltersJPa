@@ -1,6 +1,6 @@
-package com.academy.apifiltersjpa.controller;
+package com.academy.apifiltersjpa.user_exemple.controller;
 
-import com.academy.apifiltersjpa.entity.ActiveDisableEnum;
+import com.academy.apifiltersjpa.user_exemple.entity.ActiveDisableEnum;
 
 import java.time.LocalDate;
 public record UserCriteria(

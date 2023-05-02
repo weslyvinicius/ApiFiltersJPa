@@ -1,9 +1,9 @@
-package com.academy.apifiltersjpa.controller;
+package com.academy.apifiltersjpa.user_exemple.controller;
 
-import com.academy.apifiltersjpa.entity.User;
-import com.academy.apifiltersjpa.repository.UserRepository;
-import com.academy.apifiltersjpa.repository.UserRepositoryOther;
-import com.academy.apifiltersjpa.repository.UserSpecification;
+import com.academy.apifiltersjpa.user_exemple.entity.User;
+import com.academy.apifiltersjpa.user_exemple.repository.UserRepository;
+import com.academy.apifiltersjpa.user_exemple.repository.UserRepositoryOther;
+import com.academy.apifiltersjpa.user_exemple.repository.UserSpecification;
 import lombok.AllArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;

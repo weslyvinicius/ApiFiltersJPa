@@ -1,4 +1,4 @@
-package com.academy.apifiltersjpa.entity;
+package com.academy.apifiltersjpa.user_exemple.entity;
 
 import jakarta.persistence.AttributeConverter;
 import jakarta.persistence.Converter;

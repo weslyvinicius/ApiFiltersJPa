@@ -1,4 +1,4 @@
-package com.academy.apifiltersjpa.configs;
+package com.academy.apifiltersjpa.user_exemple.configs;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.format.FormatterRegistry;

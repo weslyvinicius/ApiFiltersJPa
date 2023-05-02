@@ -48,3 +48,21 @@ INSERT INTO clients (id, name, date_birthday, age, city, state, active) VALUES (
 INSERT INTO clients (id, name, date_birthday, age, city, state, active) VALUES (48, 'Judith Gantt','1921-09-16',96,'Manaus','AM','A' );
 INSERT INTO clients (id, name, date_birthday, age, city, state, active) VALUES (49, 'Leila Cunha','1942-08-31',75,'Getzville','NY','D' );
 INSERT INTO clients (id, name, date_birthday, age, city, state, active) VALUES (50, 'Eduarda Gomes','1924-12-27',93,'Taos','NM','A' );
+
+INSERT INTO address (id, city) VALUES (1,'Braga');
+INSERT INTO address (id, city) VALUES (2,'Porto');
+INSERT INTO address (id, city) VALUES (3,'Lisboa');
+
+INSERT INTO student (id, name, address_id) VALUES (1,'Maria',1);
+INSERT INTO student (id, name, address_id) VALUES (2,'Jose' ,2);
+INSERT INTO student (id, name, address_id) VALUES (3,'Jesus',3);
+
+-- INSERT INTO subject (id, name, student_id) VALUES (1,'JAVA',1);
+-- INSERT INTO subject (id, name, student_id) VALUES (2,'Spring Boot',1);
+-- INSERT INTO subject (id, name, student_id) VALUES (3,'Junit',1);
+-- INSERT INTO subject (id, name, student_id) VALUES (4,'Angular',2);
+-- INSERT INTO subject (id, name, student_id) VALUES (5,'css',2);
+-- INSERT INTO subject (id, name, student_id) VALUES (6,'javascript',2);
+-- INSERT INTO subject (id, name, student_id) VALUES (7,'Git',3);
+-- INSERT INTO subject (id, name, student_id) VALUES (8,'Jenkins',3);
+-- INSERT INTO subject (id, name, student_id) VALUES (9,'Jira',3);
